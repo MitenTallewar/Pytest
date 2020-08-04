@@ -1,0 +1,310 @@
+
+
+m1
+	a_test.py
+	b_test.py
+	c_test.py
+	
+m2
+	x_test.py
+	y_test.py
+	
+	
+	
+	
+PyTest-->
+		grouping
+		
+
+		TestReporting---*
+	test parameterication
+	test grouping
+		 duration -
+		 
+		 
+	supports- -> multithreading --> we can run tests in parallel
+	
+	
+	
+	no need to have class --> we can work using test functions-->
+									not request -->
+													no-invisive
+													invisive
+													
+					test_a_func():-->							
+													
+					class A(unitTest.Testcase) --> unless and until --> inherite-->
+	
+	
+	unitest -->  features -- testing framework --> unless --> inherit --> unitest.Testcase==>
+			invisive--> dependent
+	
+	pytest --> non-invisive --> no need to inherit --> will get testing features--implicitly.
+			
+			
+	module --> 	test_*.py			*_test.py
+				
+					def test_methodname
+					def testmethodname
+					
+			python -m unitest 
+			
+			pytest --> will run all test functions --are nothing but-- test cases.
+			
+python -m unitest test_abc.py	
+python -m -k abc unitTest test_abc.py 
+		--> search abc word inside test_abc--> matching-- only execute
+		
+pytest test_abc.py	--> execute all test functions from given module
+	
+pytest -k abc  --> 	in current directory-- search all modules 
+						test_*.py
+					or  *_test.py files -- and in which-->
+					start executing all test functions -->
+					which has abc word
+					
+pytest -k abc test_pqr.py	--> search only inside -> test_pqr.py			
+
+		pytest vs unitTest --> 
+
+
+Next - session --> 					sqlite -- mysql -- 
+--> fixtures
+--> grouping- -mark
+--> parameterization-->
+--> duration -->
+--> reporting
+--> one sample with-- django-
+
+pytest -- ?
+		
+
+
+
+
+	
+	
+	
+	test_a.py
+				Class TestA:		class TestA2
+					 3					def test_x()
+											pass
+										def test_y():
+											pass
+	test_b.py
+	
+				Class TestB:		class TestB2	Class TestB3:
+					 3					5				10
+					 					 
+	test_c.py
+	
+				Class TestC:		
+					 5		
+--> no of modules -- 3 -->  -m module names
+--> no of test classes --> 6
+--> no of test cases/methods -->31
+--> no of test suites --> 1 -> project level -- combination of all -->
+					next --> logical combinations 
+					
+	Yogesh
+		test_a.py
+		test_b.py
+		test_c.py
+		
+	Yogesh>python -m unitest 		--> all modules --> which by default suite -- 31
+	
+			Test discovery --> started from current directory-->
+			
+	
+	
+	python -m unittest test_a.TestA2			--> will execute only test cases from test_a -->
+																				TestA2 -->5
+																				
+	python -m unittest test_module.TestA2
+
+
+
+	python -m unitest	test_module
+	python -m unitest	test_module.ClassName
+	python -m unitest	test_module.ClassName.Testcasename
+	
+	
+	
+	
+	FlaskProject
+		templates
+		controller
+		config
+		tests/
+				login/test_a.py	test_b.py	test_c.py		3 modules --> Login -- min --3
+				registraion/test_t.py	test_y.py	test_X.py				-- min3
+				
+					10 test --> 		10 min
+					
+FlaskProject>python -m unittest  --> current folder --> all modules-->all classes--> all tests
+			1000 -->  103 -- running--> attempt-->102
+												103 -- inprogress -->	ctrl+c---> exit--
+																			not interest for testing
+																			
+			python -m -c unittest
+					103--> ctrl+c -- 103 completed----> report - pass/fail -- 103
+		
+			7 test -- execution -- inprogress --->  ctrl+c --> 7 test compled --> reports only 7
+		
+		
+				
+				
+				unitest -- every dev -- machine --> 
+					integration - after code merge -- combine --> pass --> QA -- la build-->
+					
+					I				c
+					-f				-
+			a
+			
+			b f		fail			fail
+			
+			c
+			
+			d f						fail
+			
+			e
+			
+			
+			-k --> search for pattern --
+			
+			
+flaskproject> python -m unittest discover -s tests -p "test_*.py"
+flaskproject>python -m unittest discover -s tests -p "*_test.py"
+
+
+
+
+import unittest
+
+class WidgetTestCase(unittest.TestCase):
+    def setUp(self):  #fixture
+        self.widget = Widget('The widget') #only instance- 50,50
+
+    def test_default_widget_size(self):// default-- widget--50,50
+        self.assertEqual(self.widget.size(), (50,50),'incorrect default size')
+
+    def test_widget_resize(self):
+        self.widget.resize(100,150)
+        self.assertEqual(self.widget.size(), (100,150),'wrong size after resize')
+						 
+						 
+						 
+
+
+
+
+
+
+def xyz()
+	return 10
+	
+
+	xyz() == 10		--> manually ---
+	assert xyz()==10- --> report --> outside the testing framework
+	
+	
+	code --> webapplication -->
+	
+	
+	framework --> 
+			pycharm --
+			flask 
+			django
+	
+These libs are resposible for specific task --> testing	
+			pytest -- testing -- utility function-> testing easy..
+									asserations-- n methods--> along overriden -->
+									reports - xml/pdf/json/html --> and so on
+			unitest --> testing
+			
+			
+	python test -- discovery -->	 search -- for something-->
+															test cases-->
+									class Test*
+										def test_abc():
+											pass
+											
+										def test_pqr():
+											pass
+										
+										
+					
+	python -m unittest test_a test_x test_y	--> modules				
+						
+				test_a.py-->		Class TestA:
+										
+										def test_a1()
+											pass
+										
+										def test_a2()
+					
+Yogesh>python -m unittest test_module1 test_module2	--> will exeucte all test cases which are inside these modules
+python -m unittest test_module.TestClass
+python -m unittest test_module.TestClass.test_method
+
+
+
+	
+	
+	Test Suite ---> project -- entire test cases -->
+	
+	
+	
+	def xyz():
+		return 10
+		
+		
+test_abc.py
+		asserttions-->
+
+	 test_xyz() == 10  --> manually assert -->
+	 
+	 class TestA()
+	 
+	 
+	 
+	import unittest
+
+
+class TestLoginFunctions(unittest.TestCase):
+
+    def test_a(self):
+        print('inside test a')
+
+    def test_b(self):
+        print('inside test b')
+
+    def test_c(self):
+        print('inside test c')
+
+
+
+
+import unittest
+import logging
+#A-Z --> 26
+#10  -->260
+#A X Y --> 40
+
+print('hi')
+
+import sys
+sys.exit(0)
+class TestRegFunctions(unittest.TestCase):
+
+    def test_pabcd(self): # test method-- test cases -->
+        print('inside test p')
+
+    def test_abcdx(self):
+        print('inside test x')
+
+    def test_yabcd(self):
+        print('inside test y')
+
+    def test_zabcxx(self):
+        print('inside test z')
